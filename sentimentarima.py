@@ -58,15 +58,15 @@ try:
     end_date = datetime.date.today()
     start_date = end_date - datetime.timedelta(days=365)
 
-    # Check if the data file exists
+    # Check if the data file exists and delete if it does
     filename = f"{tickersymbol}_data.csv"
     if os.path.exists(filename):
-        # If the data file exists, load it
-        df = pd.read_csv(filename, index_col=0, parse_dates=True)
-    else:
-        # If the data file doesn't exist, download the data and save it to a file
-        df = data.history(start=start_date, end=end_date)
-        df.to_csv(filename)
+        # If the data file exists, delete it
+        os.remove(filename)
+
+    # Download the data and save it to a file
+    df = data.history(start=start_date, end=end_date)
+    df.to_csv(filename)
 
     # Plot historical prices
     st.subheader("Historical Prices")
