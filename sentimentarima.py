@@ -159,11 +159,11 @@ try:
     # Define a function to classify sentiment
     def classify_sentiment(scores):
         if scores['compound'] > 0.05:
-            return 'INVESTIMATE suggests: BUY'
+            return 'suggests: BUY'
         elif scores['compound'] < -0.05:
-            return 'INVESTIMATE suggests: SELL'
+            return 'suggests: SELL'
         else:
-            return 'INVESTIMATE suggests: NEUTRAL'
+            return 'suggests: NEUTRAL'
 
     # Streamlit section for sentiment analysis
     st.subheader("Sentiment Analysis")
@@ -187,7 +187,7 @@ try:
                         st.write("Title:", title)
                         st.write("Paragraph:", paragraph)
                         st.write("Sentiment Scores:", sentiment_scores)
-                        st.write("Sentiment:", sentiment)
+                        st.write("INVESTIMATE ", sentiment)
                         st.write("\n")
 
                         scraped_data.add((title, paragraph, str(sentiment_scores), sentiment))
