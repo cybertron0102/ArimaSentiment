@@ -192,8 +192,7 @@ try:
 
                         scraped_data.add((title, paragraph, str(sentiment_scores), sentiment))
         else:
-            st.write("No news for ", company_name)
-            # st.write("Failed to retrieve the page. Status code:", webpage.status_code)
+            st.write("Failed to retrieve the page. Status code:", webpage.status_code)
 
 
         time.sleep(60)
