@@ -44,7 +44,7 @@ def is_stock_mentioned(text, stock_name):
 st.title("Stock Analysis Dashboard")
 
 # Get user input for ticker symbol and company name
-tickersymbol = st.text_input("Enter the ticker symbol (.NS for NSE or .BO for BSE after the stock ticker):")
+tickersymbol = st.text_input("Enter the ticker symbol (format - SYMBOL.NS for NSE and SYMBOL.BO for BSE):")
 company_name = st.text_input("Enter the company name for sentiment analysis:")
 
 if not tickersymbol or not company_name:
