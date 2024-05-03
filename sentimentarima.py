@@ -159,7 +159,7 @@ try:
     # Define a function to classify sentiment
     def classify_sentiment(scores):
         if scores['compound'] > 0.05:
-            return 'INVESTIMATE suggests: option'
+            return 'INVESTIMATE suggests: BUY'
         elif scores['compound'] < -0.05:
             return 'INVESTIMATE suggests: SELL'
         else:
