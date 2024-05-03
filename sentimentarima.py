@@ -44,7 +44,7 @@ def is_stock_mentioned(text, stock_name):
 st.title("Stock Analysis Dashboard")
 
 # Get user input for ticker symbol and company name
-tickersymbol = st.text_input("Enter the ticker symbol:")
+tickersymbol = st.text_input("Enter the ticker symbol (.NS for NSE or .BO for BSE after the stock ticker):")
 company_name = st.text_input("Enter the company name for sentiment analysis:")
 
 if not tickersymbol or not company_name:
@@ -159,11 +159,11 @@ try:
     # Define a function to classify sentiment
     def classify_sentiment(scores):
         if scores['compound'] > 0.05:
-            return 'bullish'
+            return 'INVESTIMATE suggests: option'
         elif scores['compound'] < -0.05:
-            return 'bearish'
+            return 'INVESTIMATE suggests: SELL'
         else:
-            return 'neutral'
+            return 'INVESTIMATE suggests: NEUTRAL'
 
     # Streamlit section for sentiment analysis
     st.subheader("Sentiment Analysis")
