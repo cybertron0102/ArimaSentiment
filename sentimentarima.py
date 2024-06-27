@@ -126,27 +126,9 @@ try:
     # Predict future prices for selected time frame
     predicted_prices = predict_future_days(models, days)
 
-    # # Print predicted prices
-    # st.subheader("Predicted Prices")
-    # st.write("The predicted prices are: ", predicted_prices[-5:])
-
-    # # Print predicted prices with dates
-    # st.subheader("Predicted Prices")
-    # predicted_dates = pd.date_range(start=df.index[-1] + pd.Timedelta(days=1), periods=5)
-    # predicted_prices_dict = dict(zip(predicted_dates.strftime('%Y-%m-%d'), predicted_prices[-5:]))
-    # st.write("The predicted prices are:")
-    # for date, price in predicted_prices_dict.items():
-    #     st.write(f"{date}: {price:.2f}")
-
-    # Print predicted prices with dates
+    # Print predicted prices
     st.subheader("Predicted Prices")
-    last_historical_date = df.index[-1]
-    predicted_dates = pd.date_range(start=last_historical_date + pd.Timedelta(days=1), periods=len(predicted_prices))
-    predicted_prices_dict = dict(zip(predicted_dates[-5:], predicted_prices[-5:]))
-
-    st.write("The predicted prices for the last 5 days are:")
-    for date, price in predicted_prices_dict.items():
-        st.write(f"{date.strftime('%Y-%m-%d')}: {price:.2f}")
+    st.write("The predicted prices are: ", predicted_prices[-5:])
 
     # Plot actual and predicted prices with support and resistance levels
     fig = go.Figure()
