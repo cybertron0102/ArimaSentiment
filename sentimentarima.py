@@ -128,7 +128,7 @@ try:
 
     # Print predicted prices
     st.subheader("Predicted Prices")
-    st.write("The predicted prices are: ", predicted_prices[-3:])
+    st.write("The predicted prices are: ", predicted_prices[-5:])
 
     # Plot actual and predicted prices with support and resistance levels
     fig = go.Figure()
