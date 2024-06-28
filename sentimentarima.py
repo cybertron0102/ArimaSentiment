@@ -159,11 +159,11 @@ try:
     # Define a function to classify sentiment
     def classify_sentiment(scores):
         if scores['compound'] > 0.05:
-            return 'suggests: BUY (DISCLAIMER: INVESTIMATE suggestions are for\ninformation only, not financial advice.\nInvesting carries risk.)'
+            return 'suggests: BUY \n(DISCLAIMER: INVESTIMATE suggestions are for\ninformation only, not financial advice.\nInvesting carries risk.)'
         elif scores['compound'] < -0.05:
-            return 'suggests: SELL (DISCLAIMER: INVESTIMATE suggestions are for\ninformation only, not financial advice.\nInvesting carries risk.)'
+            return 'suggests: SELL \n(DISCLAIMER: INVESTIMATE suggestions are for\ninformation only, not financial advice.\nInvesting carries risk.)'
         else:
-            return 'suggests: NEUTRAL (DISCLAIMER: INVESTIMATE suggestions are for\ninformation only, not financial advice.\nInvesting carries risk.)'
+            return 'suggests: NEUTRAL \n(DISCLAIMER: INVESTIMATE suggestions are for\ninformation only, not financial advice.\nInvesting carries risk.)'
 
     # Streamlit section for sentiment analysis
     st.subheader("Sentiment Analysis")
